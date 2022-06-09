@@ -1,1 +1,9 @@
-[]
+- definition:
+    query:
+      collection_name: allowed-queries
+      query_name: public list of meesages
+  url: public/getdata
+  methods:
+    - GET
+  name: public list of meesages
+  comment: null

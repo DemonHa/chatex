@@ -17,6 +17,12 @@ array_relationships:
           schema: public
           name: rooms
 select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - name
+      filter: {}
+      limit: 20
   - role: user
     permission:
       columns:

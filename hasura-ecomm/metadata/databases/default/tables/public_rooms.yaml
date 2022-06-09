@@ -24,6 +24,14 @@ insert_permissions:
         - name
       backend_only: false
 select_permissions:
+  - role: anonymous
+    permission:
+      columns:
+        - created_at
+        - name
+        - user_id
+      filter: {}
+      limit: 10
   - role: user
     permission:
       columns:
