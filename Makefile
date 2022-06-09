@@ -81,3 +81,7 @@ migrate-create:
 		--database-name default \
 		--project hasura-ecomm
 	# @hasura migrate apply --project hasura-ecomm --database-name default
+
+
+export-hasura:
+	@hasura metadata export --project hasura-ecomm 
