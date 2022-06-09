@@ -9,6 +9,14 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # Copy or project directory (locally) in the current directory of our docker image (/app)
-COPY frontend/ .
+COPY frontend/chatex/ .
+
+EXPOSE $PORT
+
+# Set host to localhost / the docker image
+ENV NUXT_HOST=0.0.0.0
+
+# Set app port
+ENV NUXT_PORT=$PORT
 
 CMD [ "npm", "start" ]
