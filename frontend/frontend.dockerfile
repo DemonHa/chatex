@@ -9,7 +9,7 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # Copy the app package and package-lock.json file
-COPY frontend/package*.json ./
+COPY frontend/chatex/package*.json ./
 
 # Install node packages
 RUN npm install
