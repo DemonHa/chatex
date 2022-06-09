@@ -87,4 +87,5 @@ export-hasura:
 	@hasura metadata export --project hasura-ecomm 
 
 create-frontend:
+	@sudo chown -R $USER .
 	@docker build --file=frontend/frontend.dockerfile -t playground-frontend .
