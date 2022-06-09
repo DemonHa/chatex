@@ -85,3 +85,6 @@ migrate-create:
 
 export-hasura:
 	@hasura metadata export --project hasura-ecomm 
+
+create-frontend:
+	@docker build --file=frontend/frontend.dockerfile -t playground-frontend

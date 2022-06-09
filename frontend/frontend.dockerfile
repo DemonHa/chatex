@@ -10,3 +10,5 @@ WORKDIR /app
 
 # Copy or project directory (locally) in the current directory of our docker image (/app)
 COPY frontend/ .
+
+CMD [ "npm", "start" ]
