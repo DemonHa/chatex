@@ -27,3 +27,10 @@ services:
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       HASURA_GRAPHQL_ENABLE_TELEMETRY: 'false'
     restart: unless-stopped
+  
+  playground-frontend:
+    image: playground-frontend:latest
+    environment:
+      PORT: 3001
+    ports:
+      - 3001:3001
