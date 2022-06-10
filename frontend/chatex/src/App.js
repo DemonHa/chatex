@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { RoomList, Room } from './components/rooms/rooms';
+import { Chat } from './components/chat/chat';
+
+import { useState, useEffect } from "react";
 import './App.css';
 
+// import logo from './logo.svg';
+
 function App() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("api/rest/public/getdata")
+    .then(res=> res.json())
+    .then(res=>setData(res.rooms));
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RoomList>
+        {data.map((el, i) => <Room key={i} name={el.name} />)}
+      </RoomList>
+      <Chat></Chat>
     </div>
   );
 }

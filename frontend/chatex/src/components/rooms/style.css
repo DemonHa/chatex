@@ -1,0 +1,10 @@
+.roomlist {
+    flex: 1;
+    max-width: 300px;
+    background-color: red;
+}
+  
+.room {
+padding: 10px 5px;
+}
+
