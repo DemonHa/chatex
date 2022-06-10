@@ -19,6 +19,7 @@ services:
     ports:
       - '${HASURA_PORT:-8080}:8080'
     environment:
+      HASURA_GRAPHQL_CORS_DOMAIN: '*'
       HASURA_GRAPHQL_DEV_MODE: 'true'
       HASURA_GRAPHQL_ENABLE_CONSOLE: 'true'
       HASURA_GRAPHQL_ADMIN_SECRET: '${HASURA_ADMIN_SECRET:-hasura}'
@@ -28,9 +29,9 @@ services:
       HASURA_GRAPHQL_ENABLE_TELEMETRY: 'false'
     restart: unless-stopped
   
-  playground-frontend:
-    image: playground-frontend:latest
-    environment:
-      PORT: 3001
-    ports:
-      - 3001:3001
+  # playground-frontend:
+  #   image: playground-frontend:latest
+  #   environment:
+  #     PORT: 3001
+  #   ports:
+  #     - 3001:3001
