@@ -17,7 +17,8 @@ install:
 start:
 	@echo "Starting the project..."
 	@docker-compose up -d
-	@docker-compose logs -f
+	# @docker-compose logs -f
+	@cd frontend; cd chatex; npm i; npm start
 
 stop:
 	@echo "Stopping the project..."
@@ -46,6 +47,7 @@ init:
 	@hasura metadata apply --project hasura-ecomm
 	@echo "Seeding the main database from: \"$(seed).sql\"..."
 	@hasura seed apply --project hasura-ecomm --database-name default --file $(seed).sql
+
 
 seed:
 	@echo "Seeding the main database from: \"$(seed).sql\"..."
