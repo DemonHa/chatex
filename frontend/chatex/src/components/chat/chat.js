@@ -9,7 +9,6 @@ function Message({message}) {
 }
 
 function Chat({children}) {
-  console.log(children)
   return (
     <div className="chat--container">
       {children}

@@ -1,10 +1,62 @@
-.roomlist {
-    flex: 1;
+.room--container {
+    flex: 1 1;
     max-width: 300px;
-    background-color: red;
-}
-  
-.room {
-padding: 10px 5px;
+    background-color: #3e103f;
+    display: flex;
+    color: #eee7ed;
 }
 
+.room--theme-selector {
+    width: 60px;
+    background-color: #3e103f;
+    border-right: 2px solid #491b4a;
+}
+
+.room--message-container {
+    width: 100%;
+}
+
+.room--header-container {
+    display: flex;
+    border-bottom: 2px solid #491b4a;
+    justify-content: space-between;
+}
+
+.room--header-name {
+    position: relative;
+    font-size: 13px;
+    color: #b28cb4;
+    padding: 5px 0 0 17px;
+}
+
+.room--header-name::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    background-color: #2bab7b;
+    border-radius: 50%;
+    transform: translate(-13px, 2.8px);
+}
+
+.room--create-room {
+    border: 0;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: #fffffd;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.room {
+    padding: 10px 5px;
+}
+
+.room--padding {
+    padding: 20px 17px;
+}
+
+.room--messages-group {
+    padding: 0 0 10px 0px;
+}
