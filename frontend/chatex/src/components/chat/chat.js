@@ -1,11 +1,20 @@
 import "./style.css";
 
-function Chat() {
+function Message({message}) {
   return (
-    <div className="chat--container">
-      
+    <div className="chat--message">
+      {message}
     </div>
   );
 }
 
-export {Chat};
+function Chat({children}) {
+  console.log(children)
+  return (
+    <div className="chat--container">
+      {children}
+    </div>
+  );
+}
+
+export {Chat, Message};

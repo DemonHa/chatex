@@ -8,9 +8,9 @@ function RoomList({children}) {
   );
 }
 
-function Room({name}) {
+function Room({name, onClick}) {
   return (
-    <div className="room">
+    <div className="room" onClick={onClick}>
       {name}
     </div>
   );
