@@ -17,7 +17,6 @@ install:
 start:
 	@echo "Starting the project..."
 	@docker-compose up -d
-	# @docker-compose logs -f
 	@cd frontend; cd chatex; npm i; npm start
 
 stop:
