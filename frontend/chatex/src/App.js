@@ -1,5 +1,5 @@
 import { RoomList, Room } from './components/rooms/rooms';
-import { Chat, Message } from './components/chat/chat';
+import { Chat, Message, NothingSelected } from './components/chat/chat';
 
 import { useState, useEffect } from "react";
 import './App.css';
@@ -22,9 +22,12 @@ function App() {
       <RoomList>
         {data.map((el, i) => <Room key={i} name={el.name} onClick={(e) => setRoom(i)} />)}
       </RoomList>
-      <Chat>
-        {room >= 0 && data[room].messages.map((el, i) => <Message key={i} message={el.id} />)}
-      </Chat>
+      {room >= 0 && <Chat room_name={data[room].name}>
+        {data[room].messages.map((el, i) => <Message key={i} name={el.user.name} message={el.message} posted_at={el.created_at} />)}
+      </Chat>}
+      {
+        room < 0 && <NothingSelected />
+      }
     </div>
   );
 }

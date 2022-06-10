@@ -5,8 +5,8 @@ function RoomHeader() {
   return (
     <div className="room--header-container room--padding">
       <div>
-        <div>Acme Inc.</div>
-        <div className="room--header-name">Sharon Robinson</div>
+        <div>Chatex.</div>
+        <div className="room--header-name">Anonymous</div>
       </div>
       <button className="room--create-room"><CreateMessageIcon /></button>
     </div>

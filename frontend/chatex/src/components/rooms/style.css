@@ -51,6 +51,7 @@
 
 .room {
     padding: 10px 5px;
+    cursor: pointer;
 }
 
 .room--padding {
