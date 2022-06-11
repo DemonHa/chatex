@@ -24,7 +24,7 @@
           		user {
           			name
           		}
-          		messages(order_by: {created_at:desc}) {
+          		messages(order_by: {created_at:asc}) {
           			message
           			user {
           				name
