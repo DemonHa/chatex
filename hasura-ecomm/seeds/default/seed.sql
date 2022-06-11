@@ -31,7 +31,7 @@ DO UPDATE SET
   "user_id" = EXCLUDED."user_id";
 
 INSERT INTO "public"."messages"
-("id", "user_id", "room_id", "message")
+("id", "user_id", "room_id", "message", "created_at")
 
 -- Describe the dataset:
 SELECT
@@ -40,7 +40,9 @@ SELECT
   CONCAT('u', floor(random() * (30 - 1 + 1) + 1)) AS "user_id",
   -- randomic room_id (r1 .. r100)
   CONCAT('r', floor(random() * (100 - 1 + 1) + 1)) AS "room_id",
-  CONCAT('Message example', "m") AS "message"
+  CONCAT('Message example', "m") AS "message",
+    -- randomic created_at within the last 30 days
+  now() - '30d'::INTERVAL * random() AS "created_at"
 
 -- Set the size of the dataset:
 FROM generate_series(1, 200) AS "m"
@@ -50,4 +52,5 @@ ON CONFLICT ON CONSTRAINT "messages_pkey"
 DO UPDATE SET
   "user_id" = EXCLUDED."user_id",
   "room_id" = EXCLUDED."room_id",
-  "message" = EXCLUDED."message"
+  "message" = EXCLUDED."message",
+  "created_at" = EXCLUDED."created_at"
