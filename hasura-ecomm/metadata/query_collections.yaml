@@ -29,6 +29,7 @@
           			user {
           				name
           			}
+          			created_at
           		}
           	}
           }

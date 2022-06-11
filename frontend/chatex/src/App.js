@@ -12,7 +12,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("api/rest/public/getdata")
+    fetch("/api/rest/public/data")
     .then(res=> res.json())
     .then(res=> setData(res.rooms));
   }, []);
