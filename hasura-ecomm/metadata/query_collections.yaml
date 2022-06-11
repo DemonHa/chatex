@@ -16,3 +16,19 @@
           		}
           	}
           }
+      - name: public room with messages
+        query: |
+          query MyQuery {
+          	rooms {
+          		name
+          		user {
+          			name
+          		}
+          		messages(order_by: {created_at:desc}) {
+          			message
+          			user {
+          				name
+          			}
+          		}
+          	}
+          }

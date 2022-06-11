@@ -1,6 +1,15 @@
 - definition:
     query:
       collection_name: allowed-queries
+      query_name: public room with messages
+  url: public/data
+  methods:
+    - GET
+  name: public room with messages
+  comment: null
+- definition:
+    query:
+      collection_name: allowed-queries
       query_name: public list of meesages
   url: public/getdata
   methods:
