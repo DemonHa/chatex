@@ -79,7 +79,7 @@ function MessageFooter({room_name}) {
 function Message({name, message, posted_at}) {
   return (
     <div className="chat--message">
-      <div className="chat--message-name">{name}<label className="chat--message-date">{time_ago(new Date(posted_at))}</label></div>
+      <div className="chat--message-name">{name}<label className="chat--message-date">{posted_at && time_ago(new Date(posted_at))}</label></div>
       <div className="chat--message-body">{message}</div>
     </div>
   );

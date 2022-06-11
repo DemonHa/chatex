@@ -23,6 +23,7 @@ function App() {
         {data.map((el, i) => <Room key={i} name={el.name} onClick={(e) => setRoom(i)} />)}
       </RoomList>
       {room >= 0 && <Chat room_name={data[room].name}>
+        {!data[room].messages.length && <Message key={0} message={`No message in #${data[room].name}`} />}
         {data[room].messages.map((el, i) => <Message key={i} name={el.user.name} message={el.message} posted_at={el.created_at} />)}
       </Chat>}
       {
